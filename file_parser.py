@@ -72,7 +72,8 @@ def scan(folder: Path):
             MY_OTHER.append(full_name)
         else:
             try:
-                REGISTER_EXTENSION[extension]
+                ext_reg = REGISTER_EXTENSION[extension]
+                ext_reg.append(full_name)
                 EXTENSIONS.add(extension)
             except KeyError:
                 UNKNOWN.add(extension)  # .mp4, .mov, .avi
